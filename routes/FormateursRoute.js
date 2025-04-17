@@ -8,5 +8,11 @@ router.get("/", (req, res) => {
   // on declare la route get
   FormateursControllers.getAllFormateurs(req, res); // on declare la fonction getAllFormateurs
 });
+router.post("/", (req, res) => {
+  FormateursControllers.addFormateur(req, res);
+});
+router.get("/:id", (req, res) => {
+  FormateursControllers.getFormateurById(req, res);
+});
 module.exports = router;
 // on exporte le router

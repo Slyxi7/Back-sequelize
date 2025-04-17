@@ -2,11 +2,17 @@ const express = require("express");
 // on importe express
 const router = express.Router();
 // on declare le router
-const FormationsControllers = require("../controllers/FormationsControllers");
+const FormationsController = require("../controllers/FormationsControllers");
 // on importe le controller formation
 router.get("/", (req, res) => {
   // on declare la route get
-  FormationsControllers.getAllFormations(req, res); // on declare la fonction getAllFormations
+  FormationsController.getAllFormations(req, res); // on declare la fonction getAllFormations
+});
+router.post("/", (req, res) => {
+  FormationsController.addFormation(req, res);
+});
+router.get("/:id", (req, res) => {
+  FormationsController.getFormationById(req, res);
 });
 module.exports = router;
 // on exporte le router

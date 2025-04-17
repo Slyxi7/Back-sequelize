@@ -7,6 +7,14 @@ class FormateursService {
     // on declare la fonction getAllFormateurs;
     return await Formateurs.findAll(); // on renvoie tous les formateurs
   }
+  async addFormateur(formateur) {
+    // on declare la fonction addFormation
+    return await Formateurs.create(formateur); // on renvoie la formation
+  }
+  async getFormateurById(id) {
+    // on declare la fonction getFormateurById;
+    return await Formateurs.findByPk(id); // on renvoie le formateur par son id
+  }
 }
 module.exports = new FormateursService();
 // on exporte le service Formateur
