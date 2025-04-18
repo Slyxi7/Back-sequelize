@@ -15,6 +15,22 @@ class FormationService {
     // on declare la fonction getFormationById;
     return await Formations.findByPk(id); // on renvoie la formation par son id
   }
+  async updateFormation(id, formation) {
+    // on declare la fonction updateFormation
+    return await Formations.update(formation, {
+      where: {
+        id_formation: id,
+      },
+    }); // on renvoie la formation mise à jour
+  }
+  async deleteFormation(id) {
+    // on declare la fonction deleteFormation
+    return await Formations.destroy({
+      where: {
+        id_formation: id,
+      },
+    }); // on renvoie la formation supprimée
+  }
 }
 module.exports = new FormationService();
 // on exporte le service Formation

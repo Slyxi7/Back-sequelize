@@ -15,6 +15,22 @@ class FormateursService {
     // on declare la fonction getFormateurById;
     return await Formateurs.findByPk(id); // on renvoie le formateur par son id
   }
+  async updateFormateur(id, formateur) {
+    // on declare la fonction updateFormateur
+    return await Formateurs.update(formateur, {
+      where: {
+        id_formateur: id,
+      },
+    }); // on renvoie le formateur mise à jour
+  }
+  async deleteFormateur(id) {
+    // on declare la fonction deleteFormateur
+    return await Formateurs.destroy({
+      where: {
+        id_formateur: id,
+      },
+    }); // on renvoie le formateur supprimé
+  }
 }
 module.exports = new FormateursService();
 // on exporte le service Formateur

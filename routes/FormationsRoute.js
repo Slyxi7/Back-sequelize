@@ -14,5 +14,11 @@ router.post("/", (req, res) => {
 router.get("/:id", (req, res) => {
   FormationsController.getFormationById(req, res);
 });
+router.put("/:id", (req, res) => {
+  FormationsController.updateFormation(req, res);
+});
+router.delete("/:id", (req, res) => {
+  FormationsController.deleteFormation(req, res);
+});
 module.exports = router;
 // on exporte le router
