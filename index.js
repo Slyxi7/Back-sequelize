@@ -14,6 +14,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 // on declare la route racine
+require("./models/association");
 
 const stagiaireRoute = require("./routes/StagiairesRoute");
 app.use("/stagiaires", stagiaireRoute);
@@ -29,6 +30,12 @@ app.use("/maitres", maitreRoute);
 
 const chienRoute = require("./routes/ChienRoute");
 app.use("/chiens", chienRoute);
+
+const puceRoute = require("./routes/PuceRoute");
+app.use("/puces", puceRoute);
+
+const examenRoute = require("./routes/ExamenRoute");
+app.use("/examens", examenRoute);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Route non trouvé" });

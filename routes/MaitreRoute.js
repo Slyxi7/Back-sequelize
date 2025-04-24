@@ -6,7 +6,7 @@ const MaitreController = require("../controllers/MaitreControllers");
 // on importe le controller Maitre
 router.get("/", (req, res) => {
   // on declare la route get
-  MaitreController.getAllMaitres(req, res); // on declare la fonction getAllMaitres
+  MaitreController.getAllMaitre(req, res); // on declare la fonction getAllMaitres
 });
 router.post("/", (req, res) => {
   MaitreController.addMaitre(req, res);

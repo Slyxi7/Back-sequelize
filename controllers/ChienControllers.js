@@ -1,8 +1,8 @@
-const ChienService = require("../services/MaitreService");
+const ChienService = require("../services/ChienService");
 // on importe le service Maitre
 class ChienController {
   // on declare la classe MChienController
-  async getAllMChien(req, res) {
+  async getAllChien(req, res) {
     // on declare la fonction getAllMChiens
     try {
       // on declare le try

@@ -1,11 +1,24 @@
 const {} = require("sequelize");
 // on importe sequelize
 const Chien = require("../models/chien");
+const Puce = require("../models/puce");
+const Examen = require("../models/examen");
 // on importe le model formateurs
 class ChienService {
   async getAllChien() {
     // on declare la fonction getAllChien;
-    return await Chien.findAll(); // on renvoie tous les Chiens
+    return await Chien.findAll({
+      include: [
+        {
+          model: Puce,
+          as: "puces"
+        },
+        {
+          model: Examen,
+          as: "examens"
+        },
+      ],
+    }); // on renvoie tous les Chiens
   }
   async addChien(chien) {
     // on declare la fonction addFormation

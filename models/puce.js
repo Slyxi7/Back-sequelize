@@ -1,35 +1,31 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/sequelize");
-const Maitre = require("./maitre");
+const Chiens = require("./chien");
 
-class Chiens extends Model {}
-Chiens.init(
+class Puce extends Model {}
+Puce.init(
   {
-    id_Chien: {
+    id_Puce: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    race: {
+    type: {
       type: DataTypes.STRING(255),
       allowNull: false,
     },
-    age: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    id_maitre: {
+    id_Chien: {
       type: DataTypes.INTEGER,
       references: {
-        model: Maitre,
-        key: "id_maitre",
+        model: Chiens,
+        key: "id_chien",
       },
     },
   },
   {
     sequelize,
-    tableName: "Chien",
+    tableName: "Puce",
     timestamps: false,
   }
 );
-module.exports = Chiens;
+module.exports = Puce;
